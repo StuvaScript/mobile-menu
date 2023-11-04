@@ -426,6 +426,39 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   display: grid;
   grid-template-rows: 1fr 10fr;
 }
+.mobile-menu {
+  position: absolute;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 0 10px 10px 0;
+  box-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.1),
+    5px 5px 10px rgba(0, 0, 0, 0.3),
+    -2px 2px 5px rgba(0, 0, 0, 0.1),
+    -5px 5px 10px rgba(0, 0, 0, 0.3);
+  background: radial-gradient(#146ef5, #0045ac);
+}
+
+.line1 {
+  width: 12px;
+  height: 1px;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  top: 15px;
+  left: 10px;
+}
+
+.line2 {
+  width: 12px;
+  height: 1px;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  top: 22px;
+  left: 14px;
+}
 
 nav {
   background: #bada55;
@@ -444,7 +477,7 @@ ul {
 li {
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;AACA;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n.mobile-menu {\n  position: absolute;\n  top: 40px;\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1029,6 +1062,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 
 
+
+window.addEventListener('resize', () => {
+  let w = window.innerWidth;
+  console.log('w');
+  console.log(w);
+  let h = window.innerHeight;
+  console.log('h');
+  console.log(h);
+  if (w <= 400) {
+    console.log('hellz ya');
+  }
+});
 
 })();
 
