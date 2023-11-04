@@ -460,6 +460,26 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   left: 14px;
 }
 
+.outer-shell {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  top: -450px;
+  right: -60px;
+  background: #146ef5;
+}
+
+.inner-shell {
+  position: relative;
+  width: 800px;
+  height: 1000px;
+  border-radius: 50%;
+  top: -5px;
+  right: -130px;
+  background: #0045ac;
+}
+
 nav {
   background: #bada55;
   display: flex;
@@ -477,7 +497,7 @@ ul {
 li {
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;AACA;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n.mobile-menu {\n  position: absolute;\n  top: 40px;\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;AACA;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,cAAc;EACd,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,cAAc;EACd,kBAAkB;EAClB,SAAS;EACT,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n.mobile-menu {\n  position: absolute;\n  top: 40px;\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.outer-shell {\n  position: absolute;\n  width: 1000px;\n  height: 1000px;\n  border-radius: 50%;\n  top: -450px;\n  right: -60px;\n  background: #146ef5;\n}\n\n.inner-shell {\n  position: relative;\n  width: 800px;\n  height: 1000px;\n  border-radius: 50%;\n  top: -5px;\n  right: -130px;\n  background: #0045ac;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1074,6 +1094,8 @@ window.addEventListener('resize', () => {
     console.log('hellz ya');
   }
 });
+
+//todo **`` Need to figure out how to do a transition event when you click on the hamburger menu to slowly spring open the mobile menu.
 
 })();
 
