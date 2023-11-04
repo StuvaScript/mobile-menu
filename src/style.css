@@ -37,6 +37,26 @@ body {
   left: 14px;
 }
 
+.outer-shell {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  top: -450px;
+  right: -60px;
+  background: #146ef5;
+}
+
+.inner-shell {
+  position: relative;
+  width: 800px;
+  height: 1000px;
+  border-radius: 50%;
+  top: -5px;
+  right: -130px;
+  background: #0045ac;
+}
+
 nav {
   background: #bada55;
   display: flex;

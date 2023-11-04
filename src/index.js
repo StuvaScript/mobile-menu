@@ -12,3 +12,5 @@ window.addEventListener('resize', () => {
     console.log('hellz ya');
   }
 });
+
+//todo **`` Need to figure out how to do a transition event when you click on the hamburger menu to slowly spring open the mobile menu.
