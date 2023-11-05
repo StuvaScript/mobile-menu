@@ -1,6 +1,10 @@
 import './normalize.css';
 import './style.css';
 
+//todo **`` Need to figure out the animations without normalize.css
+
+//! **`` This "window width" is known to be inaccurate and has been giving me the wrong values. Maybe just rely on media queries.
+
 window.addEventListener('resize', () => {
   let w = window.innerWidth;
   console.log('w');
@@ -13,4 +17,9 @@ window.addEventListener('resize', () => {
   }
 });
 
-//todo **`` Need to figure out how to do a transition event when you click on the hamburger menu to slowly spring open the mobile menu.
+//todo **`` Need to reshape and resize the blue circles.
+
+document.querySelector('.mobile-menu').addEventListener('click', function () {
+  this.classList.toggle('clicked');
+  document.querySelector('.lower-menu-wrap').classList.toggle('clicked');
+});

@@ -426,9 +426,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   display: grid;
   grid-template-rows: 1fr 10fr;
 }
-.mobile-menu {
+
+.mobile-wrap {
+  padding: 40px 0;
   position: absolute;
-  top: 40px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-menu {
   width: 40px;
   height: 40px;
   border-radius: 0 10px 10px 0;
@@ -438,6 +447,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     -2px 2px 5px rgba(0, 0, 0, 0.1),
     -5px 5px 10px rgba(0, 0, 0, 0.3);
   background: radial-gradient(#146ef5, #0045ac);
+}
+
+.mobile-menu.clicked .outer-shell {
+  transform: scale(2);
 }
 
 .line1 {
@@ -461,23 +474,52 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 .outer-shell {
-  position: absolute;
-  width: 1000px;
-  height: 1000px;
+  position: relative;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  top: -450px;
-  right: -60px;
+  top: -90px;
+  left: 80px;
   background: #146ef5;
+  transition: transform 300ms ease-in-out 500ms;
 }
 
 .inner-shell {
   position: relative;
-  width: 800px;
-  height: 1000px;
+  width: 80%;
+  height: 90%;
+  left: 10%;
+  bottom: -8px;
   border-radius: 50%;
-  top: -5px;
-  right: -130px;
   background: #0045ac;
+}
+
+.lower-menu-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.lower-menu-wrap.clicked .mobile-exit {
+  translate: 0px 0px;
+}
+
+.mobile-exit {
+  translate: 0px 100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.1),
+    5px 5px 10px rgba(0, 0, 0, 0.3),
+    -2px 2px 5px rgba(0, 0, 0, 0.1),
+    -5px 5px 10px rgba(0, 0, 0, 0.3);
+  background: radial-gradient(#146ef5, #0045ac);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24);
 }
 
 nav {
@@ -497,7 +539,7 @@ ul {
 li {
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;AACA;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,cAAc;EACd,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,cAAc;EACd,kBAAkB;EAClB,SAAS;EACT,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n.mobile-menu {\n  position: absolute;\n  top: 40px;\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.outer-shell {\n  position: absolute;\n  width: 1000px;\n  height: 1000px;\n  border-radius: 50%;\n  top: -450px;\n  right: -60px;\n  background: #146ef5;\n}\n\n.inner-shell {\n  position: relative;\n  width: 800px;\n  height: 1000px;\n  border-radius: 50%;\n  top: -5px;\n  right: -130px;\n  background: #0045ac;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,UAAU;EACV,mBAAmB;EACnB,6CAA6C;AAC/C;;AAEA;EACE,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,SAAS;EACT,YAAY;EACZ,kBAAkB;EAClB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB;;;;oCAIkC;EAClC,6CAA6C;EAC7C,YAAY;EACZ,iBAAiB;EACjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,gEAAgE;AAClE;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.mobile-wrap {\n  padding: 40px 0;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.mobile-menu {\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.mobile-menu.clicked .outer-shell {\n  transform: scale(2);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.outer-shell {\n  position: relative;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: 80px;\n  background: #146ef5;\n  transition: transform 300ms ease-in-out 500ms;\n}\n\n.inner-shell {\n  position: relative;\n  width: 80%;\n  height: 90%;\n  left: 10%;\n  bottom: -8px;\n  border-radius: 50%;\n  background: #0045ac;\n}\n\n.lower-menu-wrap {\n  display: flex;\n  justify-content: center;\n}\n\n.lower-menu-wrap.clicked .mobile-exit {\n  translate: 0px 0px;\n}\n\n.mobile-exit {\n  translate: 0px 100px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n  color: white;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24);\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1083,6 +1125,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//todo **`` Need to figure out the animations without normalize.css
+
+//! **`` This "window width" is known to be inaccurate and has been giving me the wrong values. Maybe just rely on media queries.
+
 window.addEventListener('resize', () => {
   let w = window.innerWidth;
   console.log('w');
@@ -1095,7 +1141,12 @@ window.addEventListener('resize', () => {
   }
 });
 
-//todo **`` Need to figure out how to do a transition event when you click on the hamburger menu to slowly spring open the mobile menu.
+//todo **`` Need to reshape and resize the blue circles.
+
+document.querySelector('.mobile-menu').addEventListener('click', function () {
+  this.classList.toggle('clicked');
+  document.querySelector('.lower-menu-wrap').classList.toggle('clicked');
+});
 
 })();
 
