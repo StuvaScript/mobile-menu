@@ -17,9 +17,21 @@ window.addEventListener('resize', () => {
   }
 });
 
-//todo **`` Need to reshape and resize the blue circles.
+//* **`` SELECTORS ``**
+
+const lowerMenu = document.querySelector('.lower-menu-wrap');
+const shellWrap = document.querySelector('.shell-wrap');
+
+//* **`` EVENT HANDLERS ``**
+
+//? **`` When clicking the mobile hamburger menu, it toggles a class name to allow for animations elsewhere. Look at the css for more details.
 
 document.querySelector('.mobile-menu').addEventListener('click', function () {
+  shellWrap.classList.toggle('clicked');
+  lowerMenu.classList.toggle('clicked');
+});
+
+lowerMenu.addEventListener('click', function () {
   this.classList.toggle('clicked');
-  document.querySelector('.lower-menu-wrap').classList.toggle('clicked');
+  shellWrap.classList.toggle('clicked');
 });
