@@ -449,10 +449,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background: radial-gradient(#146ef5, #0045ac);
 }
 
-.mobile-menu.clicked .outer-shell {
-  transform: scale(2);
-}
-
 .line1 {
   width: 12px;
   height: 1px;
@@ -473,30 +469,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   left: 14px;
 }
 
-.outer-shell {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: -90px;
-  left: 80px;
-  background: #146ef5;
-  transition: transform 300ms ease-in-out 500ms;
-}
-
-.inner-shell {
-  position: relative;
-  width: 80%;
-  height: 90%;
-  left: 10%;
-  bottom: -8px;
-  border-radius: 50%;
-  background: #0045ac;
-}
-
 .lower-menu-wrap {
   display: flex;
   justify-content: center;
+  align-self: center;
 }
 
 .lower-menu-wrap.clicked .mobile-exit {
@@ -519,7 +495,51 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24);
+  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;
+}
+
+.shell-wrap {
+  position: absolute;
+}
+
+.shell-wrap.clicked .outer-shell {
+  transform: scale(10);
+  top: -30px;
+  left: -80px;
+}
+
+.shell-wrap.clicked .inner-shell {
+  transform: scale(10);
+  top: -30px;
+  left: -140px;
+}
+
+.outer-shell {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: -90px;
+  left: -150px;
+  background: #146ef5;
+  transition:
+    transform 400ms ease-in-out,
+    left 400ms ease-in-out,
+    top 400ms ease-in-out;
+}
+
+.inner-shell {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: -90px;
+  left: -150px;
+  background: #0045ac;
+  transition:
+    transform 400ms ease-in-out 100ms,
+    left 400ms ease-in-out 100ms,
+    top 400ms ease-in-out 100ms;
 }
 
 nav {
@@ -539,7 +559,7 @@ ul {
 li {
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,UAAU;EACV,mBAAmB;EACnB,6CAA6C;AAC/C;;AAEA;EACE,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,SAAS;EACT,YAAY;EACZ,kBAAkB;EAClB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB;;;;oCAIkC;EAClC,6CAA6C;EAC7C,YAAY;EACZ,iBAAiB;EACjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,gEAAgE;AAClE;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.mobile-wrap {\n  padding: 40px 0;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.mobile-menu {\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.mobile-menu.clicked .outer-shell {\n  transform: scale(2);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.outer-shell {\n  position: relative;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: 80px;\n  background: #146ef5;\n  transition: transform 300ms ease-in-out 500ms;\n}\n\n.inner-shell {\n  position: relative;\n  width: 80%;\n  height: 90%;\n  left: 10%;\n  bottom: -8px;\n  border-radius: 50%;\n  background: #0045ac;\n}\n\n.lower-menu-wrap {\n  display: flex;\n  justify-content: center;\n}\n\n.lower-menu-wrap.clicked .mobile-exit {\n  translate: 0px 0px;\n}\n\n.mobile-exit {\n  translate: 0px 100px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n  color: white;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24);\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB;;;;oCAIkC;EAClC,6CAA6C;EAC7C,YAAY;EACZ,iBAAiB;EACjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sEAAsE;AACxE;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,WAAW;AACb;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;yBAGuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;+BAG6B;AAC/B;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.mobile-wrap {\n  padding: 40px 0;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.mobile-menu {\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.lower-menu-wrap {\n  display: flex;\n  justify-content: center;\n  align-self: center;\n}\n\n.lower-menu-wrap.clicked .mobile-exit {\n  translate: 0px 0px;\n}\n\n.mobile-exit {\n  translate: 0px 100px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n  color: white;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n}\n\n.shell-wrap {\n  position: absolute;\n}\n\n.shell-wrap.clicked .outer-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -80px;\n}\n\n.shell-wrap.clicked .inner-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -140px;\n}\n\n.outer-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #146ef5;\n  transition:\n    transform 400ms ease-in-out,\n    left 400ms ease-in-out,\n    top 400ms ease-in-out;\n}\n\n.inner-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #0045ac;\n  transition:\n    transform 400ms ease-in-out 100ms,\n    left 400ms ease-in-out 100ms,\n    top 400ms ease-in-out 100ms;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1141,11 +1161,23 @@ window.addEventListener('resize', () => {
   }
 });
 
-//todo **`` Need to reshape and resize the blue circles.
+//* **`` SELECTORS ``**
+
+const lowerMenu = document.querySelector('.lower-menu-wrap');
+const shellWrap = document.querySelector('.shell-wrap');
+
+//* **`` EVENT HANDLERS ``**
+
+//? **`` When clicking the mobile hamburger menu, it toggles a class name to allow for animations elsewhere. Look at the css for more details.
 
 document.querySelector('.mobile-menu').addEventListener('click', function () {
+  shellWrap.classList.toggle('clicked');
+  lowerMenu.classList.toggle('clicked');
+});
+
+lowerMenu.addEventListener('click', function () {
   this.classList.toggle('clicked');
-  document.querySelector('.lower-menu-wrap').classList.toggle('clicked');
+  shellWrap.classList.toggle('clicked');
 });
 
 })();
