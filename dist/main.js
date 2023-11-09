@@ -473,10 +473,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   display: flex;
   justify-content: center;
   align-self: center;
+  pointer-events: none;
 }
 
 .lower-menu-wrap.clicked .mobile-exit {
   translate: 0px 0px;
+  pointer-events: initial;
 }
 
 .mobile-exit {
@@ -542,24 +544,45 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     top 400ms ease-in-out 100ms;
 }
 
-nav {
+.inner-nav {
+  position: absolute;
+  color: white;
+  padding: 50px;
+  /* z-index: -100; */
+  pointer-events: none;
+  /* background: rgb(57, 42, 42); */
+  width: 100vw;
+  height: 60vh;
+}
+
+.inner-nav ul {
+  /* position: absolute; */
+  list-style-type: none;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* background: blue; */
+  justify-content: space-between;
+  height: 100%;
+}
+
+.outer-nav {
   background: #bada55;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-ul {
-  /* background: rgb(79, 205, 243); */
+.outer-nav ul {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
 }
 
-li {
+.outer-nav li {
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB;;;;oCAIkC;EAClC,6CAA6C;EAC7C,YAAY;EACZ,iBAAiB;EACjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sEAAsE;AACxE;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,WAAW;AACb;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;yBAGuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;+BAG6B;AAC/B;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,mCAAmC;EACnC,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.mobile-wrap {\n  padding: 40px 0;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.mobile-menu {\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.lower-menu-wrap {\n  display: flex;\n  justify-content: center;\n  align-self: center;\n}\n\n.lower-menu-wrap.clicked .mobile-exit {\n  translate: 0px 0px;\n}\n\n.mobile-exit {\n  translate: 0px 100px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n  color: white;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n}\n\n.shell-wrap {\n  position: absolute;\n}\n\n.shell-wrap.clicked .outer-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -80px;\n}\n\n.shell-wrap.clicked .inner-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -140px;\n}\n\n.outer-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #146ef5;\n  transition:\n    transform 400ms ease-in-out,\n    left 400ms ease-in-out,\n    top 400ms ease-in-out;\n}\n\n.inner-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #0045ac;\n  transition:\n    transform 400ms ease-in-out 100ms,\n    left 400ms ease-in-out 100ms,\n    top 400ms ease-in-out 100ms;\n}\n\nnav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\nul {\n  /* background: rgb(79, 205, 243); */\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\nli {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,kBAAkB;EAClB,oBAAoB;AACtB;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB;;;;oCAIkC;EAClC,6CAA6C;EAC7C,YAAY;EACZ,iBAAiB;EACjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sEAAsE;AACxE;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,WAAW;AACb;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;yBAGuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;+BAG6B;AAC/B;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,oBAAoB;EACpB,iCAAiC;EACjC,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;EACrB,iBAAiB;EACjB,aAAa;EACb,sBAAsB;EACtB,sBAAsB;EACtB,8BAA8B;EAC9B,YAAY;AACd;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.mobile-wrap {\n  padding: 40px 0;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.mobile-menu {\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.lower-menu-wrap {\n  display: flex;\n  justify-content: center;\n  align-self: center;\n  pointer-events: none;\n}\n\n.lower-menu-wrap.clicked .mobile-exit {\n  translate: 0px 0px;\n  pointer-events: initial;\n}\n\n.mobile-exit {\n  translate: 0px 100px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n  color: white;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n}\n\n.shell-wrap {\n  position: absolute;\n}\n\n.shell-wrap.clicked .outer-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -80px;\n}\n\n.shell-wrap.clicked .inner-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -140px;\n}\n\n.outer-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #146ef5;\n  transition:\n    transform 400ms ease-in-out,\n    left 400ms ease-in-out,\n    top 400ms ease-in-out;\n}\n\n.inner-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #0045ac;\n  transition:\n    transform 400ms ease-in-out 100ms,\n    left 400ms ease-in-out 100ms,\n    top 400ms ease-in-out 100ms;\n}\n\n.inner-nav {\n  position: absolute;\n  color: white;\n  padding: 50px;\n  /* z-index: -100; */\n  pointer-events: none;\n  /* background: rgb(57, 42, 42); */\n  width: 100vw;\n  height: 60vh;\n}\n\n.inner-nav ul {\n  /* position: absolute; */\n  list-style-type: none;\n  font-size: 1.5rem;\n  display: flex;\n  flex-direction: column;\n  /* background: blue; */\n  justify-content: space-between;\n  height: 100%;\n}\n\n.outer-nav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

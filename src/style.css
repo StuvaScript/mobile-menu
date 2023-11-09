@@ -50,10 +50,12 @@ body {
   display: flex;
   justify-content: center;
   align-self: center;
+  pointer-events: none;
 }
 
 .lower-menu-wrap.clicked .mobile-exit {
   translate: 0px 0px;
+  pointer-events: initial;
 }
 
 .mobile-exit {
@@ -119,20 +121,41 @@ body {
     top 400ms ease-in-out 100ms;
 }
 
-nav {
+.inner-nav {
+  position: absolute;
+  color: white;
+  padding: 50px;
+  /* z-index: -100; */
+  pointer-events: none;
+  /* background: rgb(57, 42, 42); */
+  width: 100vw;
+  height: 60vh;
+}
+
+.inner-nav ul {
+  /* position: absolute; */
+  list-style-type: none;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* background: blue; */
+  justify-content: space-between;
+  height: 100%;
+}
+
+.outer-nav {
   background: #bada55;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-ul {
-  /* background: rgb(79, 205, 243); */
+.outer-nav ul {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
 }
 
-li {
+.outer-nav li {
   cursor: pointer;
 }
