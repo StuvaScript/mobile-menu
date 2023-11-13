@@ -2,6 +2,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 10fr;
+  background: green;
 }
 
 .mobile-wrap {
@@ -121,6 +122,8 @@ body {
     top 400ms ease-in-out 100ms;
 }
 
+/*todo **`` In the process of styling the inner nav. Need to animate each list item and make them fade in and bounce. Also I can add a different class when it toggles off like in the video. That way the outro class will animate too.  ``** */
+
 .inner-nav {
   position: absolute;
   color: white;
@@ -132,7 +135,12 @@ body {
   height: 60vh;
 }
 
-.inner-nav ul {
+.inner-nav.clicked .nav-ul {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.nav-ul {
   /* position: absolute; */
   list-style-type: none;
   font-size: 1.5rem;
@@ -141,6 +149,9 @@ body {
   /* background: blue; */
   justify-content: space-between;
   height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 800ms ease-in-out;
 }
 
 .outer-nav {

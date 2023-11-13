@@ -19,19 +19,23 @@ window.addEventListener('resize', () => {
 
 //* **`` SELECTORS ``**
 
+const mobileMenu = document.querySelector('.mobile-menu');
 const lowerMenu = document.querySelector('.lower-menu-wrap');
 const shellWrap = document.querySelector('.shell-wrap');
+const innerNav = document.querySelector('.inner-nav');
 
 //* **`` EVENT HANDLERS ``**
 
 //? **`` When clicking the mobile hamburger menu, it toggles a class name to allow for animations elsewhere. Look at the css for more details.
 
-document.querySelector('.mobile-menu').addEventListener('click', function () {
+mobileMenu.addEventListener('click', function () {
   shellWrap.classList.toggle('clicked');
   lowerMenu.classList.toggle('clicked');
+  innerNav.classList.toggle('clicked');
 });
 
 lowerMenu.addEventListener('click', function () {
   this.classList.toggle('clicked');
   shellWrap.classList.toggle('clicked');
+  innerNav.classList.toggle('clicked');
 });
