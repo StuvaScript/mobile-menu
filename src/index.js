@@ -20,7 +20,7 @@ window.addEventListener('resize', () => {
 //* **`` SELECTORS ``**
 
 const mobileMenu = document.querySelector('.mobile-menu');
-const lowerMenu = document.querySelector('.lower-menu-wrap');
+const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
 const shellWrap = document.querySelector('.shell-wrap');
 const innerNav = document.querySelector('.inner-nav');
 
@@ -30,11 +30,11 @@ const innerNav = document.querySelector('.inner-nav');
 
 mobileMenu.addEventListener('click', function () {
   shellWrap.classList.toggle('clicked');
-  lowerMenu.classList.toggle('clicked');
+  lowerMenuWrap.classList.toggle('clicked');
   innerNav.classList.toggle('clicked');
 });
 
-lowerMenu.addEventListener('click', function () {
+lowerMenuWrap.addEventListener('click', function () {
   this.classList.toggle('clicked');
   shellWrap.classList.toggle('clicked');
   innerNav.classList.toggle('clicked');

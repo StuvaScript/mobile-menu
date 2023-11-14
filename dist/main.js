@@ -428,155 +428,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background: green;
 }
 
-.mobile-wrap {
-  padding: 40px 0;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.mobile-menu {
-  width: 40px;
-  height: 40px;
-  border-radius: 0 10px 10px 0;
-  box-shadow:
-    2px 2px 5px rgba(0, 0, 0, 0.1),
-    5px 5px 10px rgba(0, 0, 0, 0.3),
-    -2px 2px 5px rgba(0, 0, 0, 0.1),
-    -5px 5px 10px rgba(0, 0, 0, 0.3);
-  background: radial-gradient(#146ef5, #0045ac);
-}
-
-.line1 {
-  width: 12px;
-  height: 1px;
-  background: white;
-  border-radius: 10px;
-  position: relative;
-  top: 15px;
-  left: 10px;
-}
-
-.line2 {
-  width: 12px;
-  height: 1px;
-  background: white;
-  border-radius: 10px;
-  position: relative;
-  top: 22px;
-  left: 14px;
-}
-
-.lower-menu-wrap {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  pointer-events: none;
-}
-
-.lower-menu-wrap.clicked .mobile-exit {
-  translate: 0px 0px;
-  pointer-events: initial;
-}
-
-.mobile-exit {
-  translate: 0px 100px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow:
-    2px 2px 5px rgba(0, 0, 0, 0.1),
-    5px 5px 10px rgba(0, 0, 0, 0.3),
-    -2px 2px 5px rgba(0, 0, 0, 0.1),
-    -5px 5px 10px rgba(0, 0, 0, 0.3);
-  background: radial-gradient(#146ef5, #0045ac);
-  color: white;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;
-}
-
-.shell-wrap {
-  position: absolute;
-}
-
-.shell-wrap.clicked .outer-shell {
-  transform: scale(10);
-  top: -30px;
-  left: -80px;
-}
-
-.shell-wrap.clicked .inner-shell {
-  transform: scale(10);
-  top: -30px;
-  left: -140px;
-}
-
-.outer-shell {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: -90px;
-  left: -150px;
-  background: #146ef5;
-  transition:
-    transform 400ms ease-in-out,
-    left 400ms ease-in-out,
-    top 400ms ease-in-out;
-}
-
-.inner-shell {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: -90px;
-  left: -150px;
-  background: #0045ac;
-  transition:
-    transform 400ms ease-in-out 100ms,
-    left 400ms ease-in-out 100ms,
-    top 400ms ease-in-out 100ms;
-}
-
-/*todo **\`\` In the process of styling the inner nav. Need to animate each list item and make them fade in and bounce. Also I can add a different class when it toggles off like in the video. That way the outro class will animate too.  \`\`** */
-
-.inner-nav {
-  position: absolute;
-  color: white;
-  padding: 50px;
-  /* z-index: -100; */
-  pointer-events: none;
-  /* background: rgb(57, 42, 42); */
-  width: 100vw;
-  height: 60vh;
-}
-
-.inner-nav.clicked .nav-ul {
-  opacity: 1;
-  pointer-events: initial;
-}
-
-.nav-ul {
-  /* position: absolute; */
-  list-style-type: none;
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  /* background: blue; */
-  justify-content: space-between;
-  height: 100%;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 800ms ease-in-out;
-}
-
 .outer-nav {
   background: #bada55;
   display: flex;
@@ -593,7 +444,158 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 .outer-nav li {
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;EAC5B,iBAAiB;AACnB;;AAEA;EACE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,4BAA4B;EAC5B;;;;oCAIkC;EAClC,6CAA6C;AAC/C;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,mBAAmB;EACnB,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,kBAAkB;EAClB,oBAAoB;AACtB;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB;;;;oCAIkC;EAClC,6CAA6C;EAC7C,YAAY;EACZ,iBAAiB;EACjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sEAAsE;AACxE;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,WAAW;AACb;;AAEA;EACE,oBAAoB;EACpB,UAAU;EACV,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;yBAGuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,mBAAmB;EACnB;;;+BAG6B;AAC/B;;AAEA,gPAAgP;;AAEhP;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,oBAAoB;EACpB,iCAAiC;EACjC,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,UAAU;EACV,uBAAuB;AACzB;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;EACrB,iBAAiB;EACjB,aAAa;EACb,sBAAsB;EACtB,sBAAsB;EACtB,8BAA8B;EAC9B,YAAY;EACZ,UAAU;EACV,oBAAoB;EACpB,qCAAqC;AACvC;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n  background: green;\n}\n\n.mobile-wrap {\n  padding: 40px 0;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.mobile-menu {\n  width: 40px;\n  height: 40px;\n  border-radius: 0 10px 10px 0;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n}\n\n.line1 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 15px;\n  left: 10px;\n}\n\n.line2 {\n  width: 12px;\n  height: 1px;\n  background: white;\n  border-radius: 10px;\n  position: relative;\n  top: 22px;\n  left: 14px;\n}\n\n.lower-menu-wrap {\n  display: flex;\n  justify-content: center;\n  align-self: center;\n  pointer-events: none;\n}\n\n.lower-menu-wrap.clicked .mobile-exit {\n  translate: 0px 0px;\n  pointer-events: initial;\n}\n\n.mobile-exit {\n  translate: 0px 100px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow:\n    2px 2px 5px rgba(0, 0, 0, 0.1),\n    5px 5px 10px rgba(0, 0, 0, 0.3),\n    -2px 2px 5px rgba(0, 0, 0, 0.1),\n    -5px 5px 10px rgba(0, 0, 0, 0.3);\n  background: radial-gradient(#146ef5, #0045ac);\n  color: white;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n}\n\n.shell-wrap {\n  position: absolute;\n}\n\n.shell-wrap.clicked .outer-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -80px;\n}\n\n.shell-wrap.clicked .inner-shell {\n  transform: scale(10);\n  top: -30px;\n  left: -140px;\n}\n\n.outer-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #146ef5;\n  transition:\n    transform 400ms ease-in-out,\n    left 400ms ease-in-out,\n    top 400ms ease-in-out;\n}\n\n.inner-shell {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  top: -90px;\n  left: -150px;\n  background: #0045ac;\n  transition:\n    transform 400ms ease-in-out 100ms,\n    left 400ms ease-in-out 100ms,\n    top 400ms ease-in-out 100ms;\n}\n\n/*todo **`` In the process of styling the inner nav. Need to animate each list item and make them fade in and bounce. Also I can add a different class when it toggles off like in the video. That way the outro class will animate too.  ``** */\n\n.inner-nav {\n  position: absolute;\n  color: white;\n  padding: 50px;\n  /* z-index: -100; */\n  pointer-events: none;\n  /* background: rgb(57, 42, 42); */\n  width: 100vw;\n  height: 60vh;\n}\n\n.inner-nav.clicked .nav-ul {\n  opacity: 1;\n  pointer-events: initial;\n}\n\n.nav-ul {\n  /* position: absolute; */\n  list-style-type: none;\n  font-size: 1.5rem;\n  display: flex;\n  flex-direction: column;\n  /* background: blue; */\n  justify-content: space-between;\n  height: 100%;\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 800ms ease-in-out;\n}\n\n.outer-nav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+
+/*todo **\`\` Mess with giant media query */
+
+@media (width <= 400px) {
+  .mobile-wrap {
+    padding: 40px 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 0 10px 10px 0;
+    box-shadow:
+      2px 2px 5px rgba(0, 0, 0, 0.1),
+      5px 5px 10px rgba(0, 0, 0, 0.3),
+      -2px 2px 5px rgba(0, 0, 0, 0.1),
+      -5px 5px 10px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(#146ef5, #0045ac);
+  }
+
+  .line1 {
+    width: 12px;
+    height: 1px;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+  }
+
+  .line2 {
+    width: 12px;
+    height: 1px;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    top: 22px;
+    left: 14px;
+  }
+
+  .lower-menu-wrap {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    pointer-events: none;
+  }
+
+  .lower-menu-wrap.clicked .mobile-exit {
+    translate: 0px 0px;
+    pointer-events: initial;
+  }
+
+  .mobile-exit {
+    translate: 0px 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow:
+      2px 2px 5px rgba(0, 0, 0, 0.1),
+      5px 5px 10px rgba(0, 0, 0, 0.3),
+      -2px 2px 5px rgba(0, 0, 0, 0.1),
+      -5px 5px 10px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(#146ef5, #0045ac);
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;
+  }
+
+  .shell-wrap {
+    position: absolute;
+  }
+
+  .shell-wrap.clicked .outer-shell {
+    transform: scale(10);
+    top: -30px;
+    left: -80px;
+  }
+
+  .shell-wrap.clicked .inner-shell {
+    transform: scale(10);
+    top: -30px;
+    left: -140px;
+  }
+
+  .outer-shell {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -90px;
+    left: -150px;
+    background: #146ef5;
+    transition:
+      transform 400ms ease-in-out,
+      left 400ms ease-in-out,
+      top 400ms ease-in-out;
+  }
+
+  .inner-shell {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -90px;
+    left: -150px;
+    background: #0045ac;
+    transition:
+      transform 400ms ease-in-out 100ms,
+      left 400ms ease-in-out 100ms,
+      top 400ms ease-in-out 100ms;
+  }
+
+  .inner-nav {
+    position: absolute;
+    color: white;
+    padding: 50px;
+    /* z-index: -100; */
+    pointer-events: none;
+    /* background: rgb(57, 42, 42); */
+    width: 100vw;
+    height: 60vh;
+  }
+
+  .inner-nav.clicked .nav-ul {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .nav-ul {
+    /* position: absolute; */
+    list-style-type: none;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* background: blue; */
+    justify-content: space-between;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 450ms ease-in-out;
+  }
+}
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;EAC5B,iBAAiB;AACnB;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB;;AAEA,yCAAyC;;AAEzC;EACE;IACE,eAAe;IACf,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;EAChC;;EAEA;IACE,WAAW;IACX,YAAY;IACZ,4BAA4B;IAC5B;;;;sCAIkC;IAClC,6CAA6C;EAC/C;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,aAAa;IACb,uBAAuB;IACvB,kBAAkB;IAClB,oBAAoB;EACtB;;EAEA;IACE,kBAAkB;IAClB,uBAAuB;EACzB;;EAEA;IACE,oBAAoB;IACpB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB;;;;sCAIkC;IAClC,6CAA6C;IAC7C,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sEAAsE;EACxE;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,WAAW;EACb;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,YAAY;EACd;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;2BAGuB;EACzB;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;iCAG6B;EAC/B;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,oBAAoB;IACpB,iCAAiC;IACjC,YAAY;IACZ,YAAY;EACd;;EAEA;IACE,UAAU;IACV,uBAAuB;EACzB;;EAEA;IACE,wBAAwB;IACxB,qBAAqB;IACrB,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,UAAU;IACV,oBAAoB;IACpB,qCAAqC;EACvC;AACF","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n  background: green;\n}\n\n.outer-nav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n\n/*todo **`` Mess with giant media query */\n\n@media (width <= 400px) {\n  .mobile-wrap {\n    padding: 40px 0;\n    position: absolute;\n    width: 100vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  .mobile-menu {\n    width: 40px;\n    height: 40px;\n    border-radius: 0 10px 10px 0;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n  }\n\n  .line1 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 15px;\n    left: 10px;\n  }\n\n  .line2 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 22px;\n    left: 14px;\n  }\n\n  .lower-menu-wrap {\n    display: flex;\n    justify-content: center;\n    align-self: center;\n    pointer-events: none;\n  }\n\n  .lower-menu-wrap.clicked .mobile-exit {\n    translate: 0px 0px;\n    pointer-events: initial;\n  }\n\n  .mobile-exit {\n    translate: 0px 100px;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n    color: white;\n    font-size: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n  }\n\n  .shell-wrap {\n    position: absolute;\n  }\n\n  .shell-wrap.clicked .outer-shell {\n    transform: scale(10);\n    top: -30px;\n    left: -80px;\n  }\n\n  .shell-wrap.clicked .inner-shell {\n    transform: scale(10);\n    top: -30px;\n    left: -140px;\n  }\n\n  .outer-shell {\n    position: absolute;\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #146ef5;\n    transition:\n      transform 400ms ease-in-out,\n      left 400ms ease-in-out,\n      top 400ms ease-in-out;\n  }\n\n  .inner-shell {\n    position: absolute;\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #0045ac;\n    transition:\n      transform 400ms ease-in-out 100ms,\n      left 400ms ease-in-out 100ms,\n      top 400ms ease-in-out 100ms;\n  }\n\n  .inner-nav {\n    position: absolute;\n    color: white;\n    padding: 50px;\n    /* z-index: -100; */\n    pointer-events: none;\n    /* background: rgb(57, 42, 42); */\n    width: 100vw;\n    height: 60vh;\n  }\n\n  .inner-nav.clicked .nav-ul {\n    opacity: 1;\n    pointer-events: initial;\n  }\n\n  .nav-ul {\n    /* position: absolute; */\n    list-style-type: none;\n    font-size: 1.5rem;\n    display: flex;\n    flex-direction: column;\n    /* background: blue; */\n    justify-content: space-between;\n    height: 100%;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 450ms ease-in-out;\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1198,7 +1200,7 @@ window.addEventListener('resize', () => {
 //* **`` SELECTORS ``**
 
 const mobileMenu = document.querySelector('.mobile-menu');
-const lowerMenu = document.querySelector('.lower-menu-wrap');
+const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
 const shellWrap = document.querySelector('.shell-wrap');
 const innerNav = document.querySelector('.inner-nav');
 
@@ -1208,11 +1210,11 @@ const innerNav = document.querySelector('.inner-nav');
 
 mobileMenu.addEventListener('click', function () {
   shellWrap.classList.toggle('clicked');
-  lowerMenu.classList.toggle('clicked');
+  lowerMenuWrap.classList.toggle('clicked');
   innerNav.classList.toggle('clicked');
 });
 
-lowerMenu.addEventListener('click', function () {
+lowerMenuWrap.addEventListener('click', function () {
   this.classList.toggle('clicked');
   shellWrap.classList.toggle('clicked');
   innerNav.classList.toggle('clicked');
