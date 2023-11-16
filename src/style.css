@@ -22,6 +22,12 @@ body {
   cursor: pointer;
 }
 
+.inner-nav {
+}
+
+/** **`` GIANT MEDIA QUERY ``** */
+/** ***************************************************** */
+
 /*todo **`` Mess with giant media query */
 
 @media (width <= 400px) {
@@ -172,3 +178,5 @@ body {
     transition: opacity 450ms ease-in-out;
   }
 }
+
+/** ***************************************************** */
