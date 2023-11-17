@@ -1194,7 +1194,13 @@ __webpack_require__.r(__webpack_exports__);
 //* **`` SELECTORS ``**
 
 const mobileWrap = document.querySelector('.mobile-wrap');
+
+const navArray = [];
 const outerNavList = document.querySelectorAll('.outer-nav li');
+
+addListItemsToArray();
+createInnerNav();
+
 const watcher = window.matchMedia('(width <= 400px)');
 const mobileMenu = document.querySelector('.mobile-menu');
 const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
@@ -1218,21 +1224,21 @@ mobileMenu.addEventListener('click', function () {
 });
 
 lowerMenuWrap.addEventListener('click', function () {
-  this.classList.toggle('clicked');
+  lowerMenuWrap.classList.toggle('clicked');
   shellWrap.classList.toggle('clicked');
   innerNav.classList.toggle('clicked');
 });
 
 //* **`` FUNCTIONS ``**
 
-const navArray = [];
+// const navArray = [];
 
 function addListItemsToArray() {
   [...outerNavList].map((li) => {
     navArray.push(li.innerText);
   });
 }
-addListItemsToArray();
+// addListItemsToArray();
 
 //* **`` DOM MANIPULATION ``**
 
@@ -1252,7 +1258,7 @@ function createInnerNav() {
   });
 }
 
-createInnerNav();
+// createInnerNav();
 
 //todo Got the function to create the inner-nav but when I comment out the hard coded inner nav it throws an error.
 
