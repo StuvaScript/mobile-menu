@@ -1102,6 +1102,155 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   innerNav: () => (/* binding */ innerNav)
+/* harmony export */ });
+/* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
+/* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
+/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+
+
+
+
+
+
+//todo **`` Need to figure out the animations without normalize.css
+
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createInnerNav)();
+const innerNav = document.querySelector('.inner-nav');
+
+(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.watchWindowSize)();
+(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.openMobileMenu)();
+(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.closeMobileMenu)();
+
+//todo **`` Need to dynamically create the rest of the elements based on if the class "mobile-wrap" is present
+
+
+/***/ }),
+
+/***/ "./src/modules/dom-manipulation.js":
+/*!*****************************************!*\
+  !*** ./src/modules/dom-manipulation.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createInnerNav: () => (/* binding */ createInnerNav)
+/* harmony export */ });
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
+
+
+
+
+const mobileWrap = document.querySelector('.mobile-wrap');
+(0,_functions__WEBPACK_IMPORTED_MODULE_0__.addListItemsToArray)();
+
+function createInnerNav() {
+  const nav = document.createElement('nav');
+  nav.classList.add('inner-nav');
+  mobileWrap.append(nav);
+
+  const ul = document.createElement('ul');
+  ul.classList.add('nav-ul');
+  nav.append(ul);
+
+  _functions__WEBPACK_IMPORTED_MODULE_0__.navArray.map((item) => {
+    const li = document.createElement('li');
+    li.innerText = item;
+    ul.append(li);
+  });
+}
+
+
+/***/ }),
+
+/***/ "./src/modules/event-handlers.js":
+/*!***************************************!*\
+  !*** ./src/modules/event-handlers.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   closeMobileMenu: () => (/* binding */ closeMobileMenu),
+/* harmony export */   openMobileMenu: () => (/* binding */ openMobileMenu),
+/* harmony export */   watchWindowSize: () => (/* binding */ watchWindowSize)
+/* harmony export */ });
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! .. */ "./src/index.js");
+
+
+
+
+const windowSizeWatcher = window.matchMedia('(width <= 400px)');
+const mobileMenu = document.querySelector('.mobile-menu');
+const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
+const shellWrap = document.querySelector('.shell-wrap');
+
+//? **`` This watches when the media query kicks in.
+
+function watchWindowSize() {
+  windowSizeWatcher.addEventListener('change', (e) => {
+    e.matches ? console.log('Thats dope!') : console.log('please kill meeeee');
+  });
+}
+
+//? **`` When clicking the mobile hamburger menu, it opens the mobile menu and toggles a class name to allow for animations elsewhere. Look at the css for more details.
+
+function openMobileMenu() {
+  mobileMenu.addEventListener('click', function () {
+    shellWrap.classList.toggle('clicked');
+    lowerMenuWrap.classList.toggle('clicked');
+    ___WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
+  });
+}
+
+//? **`` When clicking the exit button, it removes class names and closes the mobile menu
+
+function closeMobileMenu() {
+  lowerMenuWrap.addEventListener('click', function () {
+    lowerMenuWrap.classList.toggle('clicked');
+    shellWrap.classList.toggle('clicked');
+    ___WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
+  });
+}
+
+
+/***/ }),
+
+/***/ "./src/modules/functions.js":
+/*!**********************************!*\
+  !*** ./src/modules/functions.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addListItemsToArray: () => (/* binding */ addListItemsToArray),
+/* harmony export */   navArray: () => (/* binding */ navArray)
+/* harmony export */ });
+
+
+const navArray = [];
+const outerNavList = document.querySelectorAll('.outer-nav li');
+
+function addListItemsToArray() {
+  [...outerNavList].map((li) => {
+    navArray.push(li.innerText);
+  });
+}
+
+
 /***/ })
 
 /******/ 	});
@@ -1177,93 +1326,12 @@ module.exports = styleTagTransform;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-
-
-
-//todo **`` Need to figure out the animations without normalize.css
-
-//* **`` SELECTORS ``**
-
-const mobileWrap = document.querySelector('.mobile-wrap');
-
-const navArray = [];
-const outerNavList = document.querySelectorAll('.outer-nav li');
-
-addListItemsToArray();
-createInnerNav();
-
-const watcher = window.matchMedia('(width <= 400px)');
-const mobileMenu = document.querySelector('.mobile-menu');
-const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-const shellWrap = document.querySelector('.shell-wrap');
-const innerNav = document.querySelector('.inner-nav');
-
-//* **`` EVENT HANDLERS ``**
-
-//? **`` This watches when the media query kicks in.
-
-watcher.addEventListener('change', (e) => {
-  e.matches ? console.log('Thats dope!') : console.log('please kill meeeee');
-});
-
-//? **`` When clicking the mobile hamburger menu, it toggles a class name to allow for animations elsewhere. Look at the css for more details.
-
-mobileMenu.addEventListener('click', function () {
-  shellWrap.classList.toggle('clicked');
-  lowerMenuWrap.classList.toggle('clicked');
-  innerNav.classList.toggle('clicked');
-});
-
-lowerMenuWrap.addEventListener('click', function () {
-  lowerMenuWrap.classList.toggle('clicked');
-  shellWrap.classList.toggle('clicked');
-  innerNav.classList.toggle('clicked');
-});
-
-//* **`` FUNCTIONS ``**
-
-// const navArray = [];
-
-function addListItemsToArray() {
-  [...outerNavList].map((li) => {
-    navArray.push(li.innerText);
-  });
-}
-// addListItemsToArray();
-
-//* **`` DOM MANIPULATION ``**
-
-function createInnerNav() {
-  const nav = document.createElement('nav');
-  nav.classList.add('inner-nav');
-  mobileWrap.append(nav);
-
-  const ul = document.createElement('ul');
-  ul.classList.add('nav-ul');
-  nav.append(ul);
-
-  navArray.map((item) => {
-    const li = document.createElement('li');
-    li.innerText = item;
-    ul.append(li);
-  });
-}
-
-// createInnerNav();
-
-//todo Got the function to create the inner-nav but when I comment out the hard coded inner nav it throws an error.
-
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
