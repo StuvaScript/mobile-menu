@@ -2,11 +2,11 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 10fr;
-  background: green;
 }
 
 .outer-nav {
-  background: #bada55;
+  color: white;
+  background: rebeccapurple;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,11 +1,11 @@
-import { innerNav } from '..';
+import { innerNav, lowerMenuWrap, shellWrap } from '..';
 
 export { watchWindowSize, openMobileMenu, closeMobileMenu };
 
 const windowSizeWatcher = window.matchMedia('(width <= 400px)');
 const mobileMenu = document.querySelector('.mobile-menu');
-const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-const shellWrap = document.querySelector('.shell-wrap');
+// const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
+// const shellWrap = document.querySelector('.shell-wrap');
 
 //? **`` This watches when the media query kicks in.
 

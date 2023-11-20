@@ -425,11 +425,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 10fr;
-  background: green;
 }
 
 .outer-nav {
-  background: #bada55;
+  color: white;
+  background: rebeccapurple;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -603,7 +603,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 /** ***************************************************** */
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;EAC5B,iBAAiB;AACnB;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB;;AAEA;AACA;;AAEA,iCAAiC;AACjC,2DAA2D;;AAE3D,yCAAyC;;AAEzC;EACE;IACE,eAAe;IACf,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;EAChC;;EAEA;IACE,WAAW;IACX,YAAY;IACZ,4BAA4B;IAC5B;;;;sCAIkC;IAClC,6CAA6C;EAC/C;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,aAAa;IACb,uBAAuB;IACvB,kBAAkB;IAClB,oBAAoB;EACtB;;EAEA;IACE,kBAAkB;IAClB,uBAAuB;EACzB;;EAEA;IACE,oBAAoB;IACpB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB;;;;sCAIkC;IAClC,6CAA6C;IAC7C,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sEAAsE;EACxE;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,WAAW;EACb;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,YAAY;EACd;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;2BAGuB;EACzB;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;iCAG6B;EAC/B;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,oBAAoB;IACpB,iCAAiC;IACjC,YAAY;IACZ,YAAY;EACd;;EAEA;IACE,UAAU;IACV,uBAAuB;EACzB;;EAEA;IACE,wBAAwB;IACxB,qBAAqB;IACrB,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,UAAU;IACV,oBAAoB;IACpB,qCAAqC;EACvC;AACF;;AAEA,2DAA2D","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n  background: green;\n}\n\n.outer-nav {\n  background: #bada55;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n\n.inner-nav {\n}\n\n/** **`` GIANT MEDIA QUERY ``** */\n/** ***************************************************** */\n\n/*todo **`` Mess with giant media query */\n\n@media (width <= 400px) {\n  .mobile-wrap {\n    padding: 40px 0;\n    position: absolute;\n    width: 100vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  .mobile-menu {\n    width: 40px;\n    height: 40px;\n    border-radius: 0 10px 10px 0;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n  }\n\n  .line1 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 15px;\n    left: 10px;\n  }\n\n  .line2 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 22px;\n    left: 14px;\n  }\n\n  .lower-menu-wrap {\n    display: flex;\n    justify-content: center;\n    align-self: center;\n    pointer-events: none;\n  }\n\n  .lower-menu-wrap.clicked .mobile-exit {\n    translate: 0px 0px;\n    pointer-events: initial;\n  }\n\n  .mobile-exit {\n    translate: 0px 100px;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n    color: white;\n    font-size: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n  }\n\n  .shell-wrap {\n    position: absolute;\n  }\n\n  .shell-wrap.clicked .outer-shell {\n    transform: scale(10);\n    top: -30px;\n    left: -80px;\n  }\n\n  .shell-wrap.clicked .inner-shell {\n    transform: scale(10);\n    top: -30px;\n    left: -140px;\n  }\n\n  .outer-shell {\n    position: absolute;\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #146ef5;\n    transition:\n      transform 400ms ease-in-out,\n      left 400ms ease-in-out,\n      top 400ms ease-in-out;\n  }\n\n  .inner-shell {\n    position: absolute;\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #0045ac;\n    transition:\n      transform 400ms ease-in-out 100ms,\n      left 400ms ease-in-out 100ms,\n      top 400ms ease-in-out 100ms;\n  }\n\n  .inner-nav {\n    position: absolute;\n    color: white;\n    padding: 50px;\n    /* z-index: -100; */\n    pointer-events: none;\n    /* background: rgb(57, 42, 42); */\n    width: 100vw;\n    height: 60vh;\n  }\n\n  .inner-nav.clicked .nav-ul {\n    opacity: 1;\n    pointer-events: initial;\n  }\n\n  .nav-ul {\n    /* position: absolute; */\n    list-style-type: none;\n    font-size: 1.5rem;\n    display: flex;\n    flex-direction: column;\n    /* background: blue; */\n    justify-content: space-between;\n    height: 100%;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 450ms ease-in-out;\n  }\n}\n\n/** ***************************************************** */\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB;;AAEA;AACA;;AAEA,iCAAiC;AACjC,2DAA2D;;AAE3D,yCAAyC;;AAEzC;EACE;IACE,eAAe;IACf,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;EAChC;;EAEA;IACE,WAAW;IACX,YAAY;IACZ,4BAA4B;IAC5B;;;;sCAIkC;IAClC,6CAA6C;EAC/C;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,aAAa;IACb,uBAAuB;IACvB,kBAAkB;IAClB,oBAAoB;EACtB;;EAEA;IACE,kBAAkB;IAClB,uBAAuB;EACzB;;EAEA;IACE,oBAAoB;IACpB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB;;;;sCAIkC;IAClC,6CAA6C;IAC7C,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sEAAsE;EACxE;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,WAAW;EACb;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,YAAY;EACd;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;2BAGuB;EACzB;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;iCAG6B;EAC/B;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,oBAAoB;IACpB,iCAAiC;IACjC,YAAY;IACZ,YAAY;EACd;;EAEA;IACE,UAAU;IACV,uBAAuB;EACzB;;EAEA;IACE,wBAAwB;IACxB,qBAAqB;IACrB,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,UAAU;IACV,oBAAoB;IACpB,qCAAqC;EACvC;AACF;;AAEA,2DAA2D","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.outer-nav {\n  color: white;\n  background: rebeccapurple;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n\n.inner-nav {\n}\n\n/** **`` GIANT MEDIA QUERY ``** */\n/** ***************************************************** */\n\n/*todo **`` Mess with giant media query */\n\n@media (width <= 400px) {\n  .mobile-wrap {\n    padding: 40px 0;\n    position: absolute;\n    width: 100vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  .mobile-menu {\n    width: 40px;\n    height: 40px;\n    border-radius: 0 10px 10px 0;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n  }\n\n  .line1 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 15px;\n    left: 10px;\n  }\n\n  .line2 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 22px;\n    left: 14px;\n  }\n\n  .lower-menu-wrap {\n    display: flex;\n    justify-content: center;\n    align-self: center;\n    pointer-events: none;\n  }\n\n  .lower-menu-wrap.clicked .mobile-exit {\n    translate: 0px 0px;\n    pointer-events: initial;\n  }\n\n  .mobile-exit {\n    translate: 0px 100px;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n    color: white;\n    font-size: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n  }\n\n  .shell-wrap {\n    position: absolute;\n  }\n\n  .shell-wrap.clicked .outer-shell {\n    transform: scale(10);\n    top: -30px;\n    left: -80px;\n  }\n\n  .shell-wrap.clicked .inner-shell {\n    transform: scale(10);\n    top: -30px;\n    left: -140px;\n  }\n\n  .outer-shell {\n    position: absolute;\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #146ef5;\n    transition:\n      transform 400ms ease-in-out,\n      left 400ms ease-in-out,\n      top 400ms ease-in-out;\n  }\n\n  .inner-shell {\n    position: absolute;\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #0045ac;\n    transition:\n      transform 400ms ease-in-out 100ms,\n      left 400ms ease-in-out 100ms,\n      top 400ms ease-in-out 100ms;\n  }\n\n  .inner-nav {\n    position: absolute;\n    color: white;\n    padding: 50px;\n    /* z-index: -100; */\n    pointer-events: none;\n    /* background: rgb(57, 42, 42); */\n    width: 100vw;\n    height: 60vh;\n  }\n\n  .inner-nav.clicked .nav-ul {\n    opacity: 1;\n    pointer-events: initial;\n  }\n\n  .nav-ul {\n    /* position: absolute; */\n    list-style-type: none;\n    font-size: 1.5rem;\n    display: flex;\n    flex-direction: column;\n    /* background: blue; */\n    justify-content: space-between;\n    height: 100%;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 450ms ease-in-out;\n  }\n}\n\n/** ***************************************************** */\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1112,7 +1112,9 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   innerNav: () => (/* binding */ innerNav)
+/* harmony export */   innerNav: () => (/* binding */ innerNav),
+/* harmony export */   lowerMenuWrap: () => (/* binding */ lowerMenuWrap),
+/* harmony export */   shellWrap: () => (/* binding */ shellWrap)
 /* harmony export */ });
 /* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
 /* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
@@ -1125,6 +1127,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //todo **`` Need to figure out the animations without normalize.css
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createLowerMenuWrap)();
+const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
+
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createShellWrap)();
+const shellWrap = document.querySelector('.shell-wrap');
 
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createInnerNav)();
 const innerNav = document.querySelector('.inner-nav');
@@ -1146,7 +1153,9 @@ const innerNav = document.querySelector('.inner-nav');
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createInnerNav: () => (/* binding */ createInnerNav)
+/* harmony export */   createInnerNav: () => (/* binding */ createInnerNav),
+/* harmony export */   createLowerMenuWrap: () => (/* binding */ createLowerMenuWrap),
+/* harmony export */   createShellWrap: () => (/* binding */ createShellWrap)
 /* harmony export */ });
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
 
@@ -1172,6 +1181,31 @@ function createInnerNav() {
   });
 }
 
+function createShellWrap() {
+  const div = document.createElement('div');
+  div.classList.add('shell-wrap');
+  mobileWrap.append(div);
+
+  const firstChildDiv = document.createElement('div');
+  firstChildDiv.classList.add('outer-shell');
+  div.append(firstChildDiv);
+
+  const secondChildDiv = document.createElement('div');
+  secondChildDiv.classList.add('inner-shell');
+  div.append(secondChildDiv);
+}
+
+function createLowerMenuWrap() {
+  const div = document.createElement('div');
+  div.classList.add('lower-menu-wrap');
+  mobileWrap.append(div);
+
+  const firstChildDiv = document.createElement('div');
+  firstChildDiv.classList.add('mobile-exit');
+  firstChildDiv.innerText = 'X';
+  div.append(firstChildDiv);
+}
+
 
 /***/ }),
 
@@ -1194,8 +1228,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const windowSizeWatcher = window.matchMedia('(width <= 400px)');
 const mobileMenu = document.querySelector('.mobile-menu');
-const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-const shellWrap = document.querySelector('.shell-wrap');
+// const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
+// const shellWrap = document.querySelector('.shell-wrap');
 
 //? **`` This watches when the media query kicks in.
 
@@ -1209,8 +1243,8 @@ function watchWindowSize() {
 
 function openMobileMenu() {
   mobileMenu.addEventListener('click', function () {
-    shellWrap.classList.toggle('clicked');
-    lowerMenuWrap.classList.toggle('clicked');
+    ___WEBPACK_IMPORTED_MODULE_0__.shellWrap.classList.toggle('clicked');
+    ___WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.classList.toggle('clicked');
     ___WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
   });
 }
@@ -1218,9 +1252,9 @@ function openMobileMenu() {
 //? **`` When clicking the exit button, it removes class names and closes the mobile menu
 
 function closeMobileMenu() {
-  lowerMenuWrap.addEventListener('click', function () {
-    lowerMenuWrap.classList.toggle('clicked');
-    shellWrap.classList.toggle('clicked');
+  ___WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.addEventListener('click', function () {
+    ___WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.classList.toggle('clicked');
+    ___WEBPACK_IMPORTED_MODULE_0__.shellWrap.classList.toggle('clicked');
     ___WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
   });
 }

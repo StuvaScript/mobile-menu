@@ -1,5 +1,9 @@
-export { innerNav };
-import { createInnerNav } from './modules/dom-manipulation';
+export { innerNav, shellWrap, lowerMenuWrap };
+import {
+  createInnerNav,
+  createLowerMenuWrap,
+  createShellWrap,
+} from './modules/dom-manipulation';
 import {
   closeMobileMenu,
   openMobileMenu,
@@ -9,6 +13,11 @@ import './normalize.css';
 import './style.css';
 
 //todo **`` Need to figure out the animations without normalize.css
+createLowerMenuWrap();
+const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
+
+createShellWrap();
+const shellWrap = document.querySelector('.shell-wrap');
 
 createInnerNav();
 const innerNav = document.querySelector('.inner-nav');
