@@ -1114,6 +1114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   innerNav: () => (/* binding */ innerNav),
 /* harmony export */   lowerMenuWrap: () => (/* binding */ lowerMenuWrap),
+/* harmony export */   mobileMenu: () => (/* binding */ mobileMenu),
+/* harmony export */   mobileWrap: () => (/* binding */ mobileWrap),
 /* harmony export */   shellWrap: () => (/* binding */ shellWrap)
 /* harmony export */ });
 /* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
@@ -1127,6 +1129,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //todo **`` Need to figure out the animations without normalize.css
+
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createMobileWrap)();
+const mobileWrap = document.querySelector('.mobile-wrap');
+
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createUpperMenuWrap)();
+const mobileMenu = document.querySelector('.mobile-menu');
+
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createLowerMenuWrap)();
 const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
 
@@ -1142,6 +1151,8 @@ const innerNav = document.querySelector('.inner-nav');
 
 //todo **`` Need to dynamically create the rest of the elements based on if the class "mobile-wrap" is present
 
+//todo **`` Remove the outer nav when the mobile menu pops up.
+
 
 /***/ }),
 
@@ -1155,26 +1166,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   createInnerNav: () => (/* binding */ createInnerNav),
 /* harmony export */   createLowerMenuWrap: () => (/* binding */ createLowerMenuWrap),
-/* harmony export */   createShellWrap: () => (/* binding */ createShellWrap)
+/* harmony export */   createMobileWrap: () => (/* binding */ createMobileWrap),
+/* harmony export */   createShellWrap: () => (/* binding */ createShellWrap),
+/* harmony export */   createUpperMenuWrap: () => (/* binding */ createUpperMenuWrap)
 /* harmony export */ });
-/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! .. */ "./src/index.js");
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
 
 
 
 
-const mobileWrap = document.querySelector('.mobile-wrap');
-(0,_functions__WEBPACK_IMPORTED_MODULE_0__.addListItemsToArray)();
+
+const body = document.querySelector('body');
+
+(0,_functions__WEBPACK_IMPORTED_MODULE_1__.addListItemsToArray)();
 
 function createInnerNav() {
   const nav = document.createElement('nav');
   nav.classList.add('inner-nav');
-  mobileWrap.append(nav);
+  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(nav);
 
   const ul = document.createElement('ul');
   ul.classList.add('nav-ul');
   nav.append(ul);
 
-  _functions__WEBPACK_IMPORTED_MODULE_0__.navArray.map((item) => {
+  _functions__WEBPACK_IMPORTED_MODULE_1__.navArray.map((item) => {
     const li = document.createElement('li');
     li.innerText = item;
     ul.append(li);
@@ -1184,7 +1200,7 @@ function createInnerNav() {
 function createShellWrap() {
   const div = document.createElement('div');
   div.classList.add('shell-wrap');
-  mobileWrap.append(div);
+  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
 
   const firstChildDiv = document.createElement('div');
   firstChildDiv.classList.add('outer-shell');
@@ -1198,12 +1214,36 @@ function createShellWrap() {
 function createLowerMenuWrap() {
   const div = document.createElement('div');
   div.classList.add('lower-menu-wrap');
-  mobileWrap.append(div);
+  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
 
   const firstChildDiv = document.createElement('div');
   firstChildDiv.classList.add('mobile-exit');
   firstChildDiv.innerText = 'X';
   div.append(firstChildDiv);
+}
+
+function createUpperMenuWrap() {
+  const div = document.createElement('div');
+  div.classList.add('upper-menu-wrap');
+  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
+
+  const firstChildDiv = document.createElement('div');
+  firstChildDiv.classList.add('mobile-menu');
+  div.append(firstChildDiv);
+
+  const firstLineDiv = document.createElement('div');
+  firstLineDiv.classList.add('line1');
+  firstChildDiv.append(firstLineDiv);
+
+  const secondLineDiv = document.createElement('div');
+  secondLineDiv.classList.add('line2');
+  firstChildDiv.append(secondLineDiv);
+}
+
+function createMobileWrap() {
+  const div = document.createElement('div');
+  div.classList.add('mobile-wrap');
+  body.prepend(div);
 }
 
 
@@ -1227,9 +1267,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const windowSizeWatcher = window.matchMedia('(width <= 400px)');
-const mobileMenu = document.querySelector('.mobile-menu');
-// const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-// const shellWrap = document.querySelector('.shell-wrap');
 
 //? **`` This watches when the media query kicks in.
 
@@ -1242,7 +1279,7 @@ function watchWindowSize() {
 //? **`` When clicking the mobile hamburger menu, it opens the mobile menu and toggles a class name to allow for animations elsewhere. Look at the css for more details.
 
 function openMobileMenu() {
-  mobileMenu.addEventListener('click', function () {
+  ___WEBPACK_IMPORTED_MODULE_0__.mobileMenu.addEventListener('click', function () {
     ___WEBPACK_IMPORTED_MODULE_0__.shellWrap.classList.toggle('clicked');
     ___WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.classList.toggle('clicked');
     ___WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
@@ -1277,6 +1314,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const navArray = [];
 const outerNavList = document.querySelectorAll('.outer-nav li');
+
+//? **`` This loops through all the items in the outer-nav class and adds them to the nav array.
 
 function addListItemsToArray() {
   [...outerNavList].map((li) => {

@@ -1,8 +1,16 @@
+import { mobileWrap } from '..';
 import { addListItemsToArray, navArray } from './functions';
 
-export { createInnerNav, createShellWrap, createLowerMenuWrap };
+export {
+  createInnerNav,
+  createShellWrap,
+  createLowerMenuWrap,
+  createUpperMenuWrap,
+  createMobileWrap,
+};
 
-const mobileWrap = document.querySelector('.mobile-wrap');
+const body = document.querySelector('body');
+
 addListItemsToArray();
 
 function createInnerNav() {
@@ -44,4 +52,28 @@ function createLowerMenuWrap() {
   firstChildDiv.classList.add('mobile-exit');
   firstChildDiv.innerText = 'X';
   div.append(firstChildDiv);
+}
+
+function createUpperMenuWrap() {
+  const div = document.createElement('div');
+  div.classList.add('upper-menu-wrap');
+  mobileWrap.append(div);
+
+  const firstChildDiv = document.createElement('div');
+  firstChildDiv.classList.add('mobile-menu');
+  div.append(firstChildDiv);
+
+  const firstLineDiv = document.createElement('div');
+  firstLineDiv.classList.add('line1');
+  firstChildDiv.append(firstLineDiv);
+
+  const secondLineDiv = document.createElement('div');
+  secondLineDiv.classList.add('line2');
+  firstChildDiv.append(secondLineDiv);
+}
+
+function createMobileWrap() {
+  const div = document.createElement('div');
+  div.classList.add('mobile-wrap');
+  body.prepend(div);
 }
