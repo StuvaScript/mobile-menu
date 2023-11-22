@@ -1115,13 +1115,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   innerNav: () => (/* binding */ innerNav),
 /* harmony export */   lowerMenuWrap: () => (/* binding */ lowerMenuWrap),
 /* harmony export */   mobileMenu: () => (/* binding */ mobileMenu),
-/* harmony export */   mobileWrap: () => (/* binding */ mobileWrap),
 /* harmony export */   shellWrap: () => (/* binding */ shellWrap)
 /* harmony export */ });
 /* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
 /* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
-/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _modules_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/functions */ "./src/modules/functions.js");
+/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+
+
+//! **`` This "body" import is needed even though it's saying it's not being read.
+
+
+
 
 
 
@@ -1130,19 +1136,14 @@ __webpack_require__.r(__webpack_exports__);
 
 //todo **`` Need to figure out the animations without normalize.css
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createMobileWrap)();
-const mobileWrap = document.querySelector('.mobile-wrap');
+(0,_modules_functions__WEBPACK_IMPORTED_MODULE_2__.populateMobileMenu)();
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createUpperMenuWrap)();
 const mobileMenu = document.querySelector('.mobile-menu');
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createLowerMenuWrap)();
 const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createShellWrap)();
 const shellWrap = document.querySelector('.shell-wrap');
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createInnerNav)();
 const innerNav = document.querySelector('.inner-nav');
 
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.watchWindowSize)();
@@ -1164,33 +1165,32 @@ const innerNav = document.querySelector('.inner-nav');
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   body: () => (/* binding */ body),
 /* harmony export */   createInnerNav: () => (/* binding */ createInnerNav),
 /* harmony export */   createLowerMenuWrap: () => (/* binding */ createLowerMenuWrap),
 /* harmony export */   createMobileWrap: () => (/* binding */ createMobileWrap),
 /* harmony export */   createShellWrap: () => (/* binding */ createShellWrap),
 /* harmony export */   createUpperMenuWrap: () => (/* binding */ createUpperMenuWrap)
 /* harmony export */ });
-/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! .. */ "./src/index.js");
-/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
-
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
 
 
 
 
 const body = document.querySelector('body');
 
-(0,_functions__WEBPACK_IMPORTED_MODULE_1__.addListItemsToArray)();
+(0,_functions__WEBPACK_IMPORTED_MODULE_0__.addListItemsToArray)();
 
 function createInnerNav() {
   const nav = document.createElement('nav');
   nav.classList.add('inner-nav');
-  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(nav);
+  _functions__WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(nav);
 
   const ul = document.createElement('ul');
   ul.classList.add('nav-ul');
   nav.append(ul);
 
-  _functions__WEBPACK_IMPORTED_MODULE_1__.navArray.map((item) => {
+  _functions__WEBPACK_IMPORTED_MODULE_0__.navArray.map((item) => {
     const li = document.createElement('li');
     li.innerText = item;
     ul.append(li);
@@ -1200,7 +1200,7 @@ function createInnerNav() {
 function createShellWrap() {
   const div = document.createElement('div');
   div.classList.add('shell-wrap');
-  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
+  _functions__WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
 
   const firstChildDiv = document.createElement('div');
   firstChildDiv.classList.add('outer-shell');
@@ -1214,7 +1214,7 @@ function createShellWrap() {
 function createLowerMenuWrap() {
   const div = document.createElement('div');
   div.classList.add('lower-menu-wrap');
-  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
+  _functions__WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
 
   const firstChildDiv = document.createElement('div');
   firstChildDiv.classList.add('mobile-exit');
@@ -1225,7 +1225,7 @@ function createLowerMenuWrap() {
 function createUpperMenuWrap() {
   const div = document.createElement('div');
   div.classList.add('upper-menu-wrap');
-  ___WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
+  _functions__WEBPACK_IMPORTED_MODULE_0__.mobileWrap.append(div);
 
   const firstChildDiv = document.createElement('div');
   firstChildDiv.classList.add('mobile-menu');
@@ -1308,12 +1308,18 @@ function closeMobileMenu() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addListItemsToArray: () => (/* binding */ addListItemsToArray),
-/* harmony export */   navArray: () => (/* binding */ navArray)
+/* harmony export */   mobileWrap: () => (/* binding */ mobileWrap),
+/* harmony export */   navArray: () => (/* binding */ navArray),
+/* harmony export */   populateMobileMenu: () => (/* binding */ populateMobileMenu)
 /* harmony export */ });
+/* harmony import */ var _dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-manipulation */ "./src/modules/dom-manipulation.js");
+
+
 
 
 const navArray = [];
 const outerNavList = document.querySelectorAll('.outer-nav li');
+let mobileWrap;
 
 //? **`` This loops through all the items in the outer-nav class and adds them to the nav array.
 
@@ -1321,6 +1327,18 @@ function addListItemsToArray() {
   [...outerNavList].map((li) => {
     navArray.push(li.innerText);
   });
+}
+
+//? **`` This creates all the html needed for the mobile menu and assigns the 'mobileWrap' a value after the element is created
+
+function populateMobileMenu() {
+  (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createMobileWrap)();
+  mobileWrap = document.querySelector('.mobile-wrap');
+
+  (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createUpperMenuWrap)();
+  (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createLowerMenuWrap)();
+  (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createShellWrap)();
+  (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createInnerNav)();
 }
 
 

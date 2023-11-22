@@ -1,13 +1,13 @@
-import { mobileWrap } from '..';
-import { addListItemsToArray, navArray } from './functions';
-
 export {
   createInnerNav,
   createShellWrap,
   createLowerMenuWrap,
   createUpperMenuWrap,
   createMobileWrap,
+  body,
 };
+
+import { addListItemsToArray, mobileWrap, navArray } from './functions';
 
 const body = document.querySelector('body');
 
