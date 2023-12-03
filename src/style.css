@@ -30,7 +30,7 @@ body {
 
 /*todo **`` Mess with giant media query */
 
-@media (width <= 400px) {
+@media (width <= 450px) {
   .mobile-wrap {
     padding: 40px 0;
     position: absolute;
@@ -109,21 +109,21 @@ body {
   }
 
   .shell-wrap.clicked .outer-shell {
-    transform: scale(10);
+    transform: scale(12);
     top: -30px;
     left: -80px;
   }
 
   .shell-wrap.clicked .inner-shell {
-    transform: scale(10);
+    transform: scale(12);
     top: -30px;
     left: -140px;
   }
 
   .outer-shell {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 24vw;
+    height: 11vh;
     border-radius: 50%;
     top: -90px;
     left: -150px;
@@ -136,8 +136,8 @@ body {
 
   .inner-shell {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 24vw;
+    height: 11vh;
     border-radius: 50%;
     top: -90px;
     left: -150px;
