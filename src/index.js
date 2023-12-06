@@ -7,6 +7,5 @@ import './normalize.css';
 import './style.css';
 
 //todo **`` Need to figure out the animations without normalize.css
-//todo **`` Write a better README
 
 lookForOuterNavClass();

@@ -1228,6 +1228,7 @@ function watchWindowSize() {
   //? **`` Checks to see if the screen size is *initially* the specified size to kick in the mobile menu.
   if (windowSizeWatcher.matches) {
     (0,_functions__WEBPACK_IMPORTED_MODULE_0__.initMobileMenu)();
+    return;
   }
 
   //? **`` Watches for *changes* in the screen size and either initiates or removes the mobile menu.
@@ -1433,7 +1434,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //todo **`` Need to figure out the animations without normalize.css
-//todo **`` Write a better README
 
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.lookForOuterNavClass)();
 
