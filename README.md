@@ -2,12 +2,16 @@
 
 A nice mobile menu for your dynamic website!
 
+## Where To Find
+
+Check out the [live project here](https://stuvascript.github.io/mobile-menu/)
+
 ## Built With
 
 - vanilla JavaScript
 - CSS
 
-### With assistance from
+### With assistance from:
 
 - Webpack
 - Prettier
