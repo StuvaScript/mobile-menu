@@ -433,7 +433,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* display: none; */
 }
 
 .outer-nav ul {
@@ -444,6 +443,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
 .outer-nav li {
   cursor: pointer;
+}
+
+main {
+  padding: 20px;
 }
 
 /*! Everything below this needs to be kept in the code for npm package */
@@ -579,9 +582,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     position: absolute;
     color: white;
     padding: 50px;
-    /* z-index: -100; */
     pointer-events: none;
-    /* background: rgb(57, 42, 42); */
     width: 100vw;
     height: 60vh;
   }
@@ -592,12 +593,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   }
 
   .nav-ul {
-    /* position: absolute; */
     list-style-type: none;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    /* background: blue; */
     justify-content: space-between;
     height: 100%;
     opacity: 0;
@@ -607,7 +606,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 /** ***************************************************** */
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB;;AAEA,wEAAwE;;AAExE;EACE,aAAa;AACf;;AAEA,iCAAiC;AACjC,2DAA2D;;AAE3D,yCAAyC;;AAEzC;EACE;IACE,eAAe;IACf,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;EAChC;;EAEA;IACE,WAAW;IACX,YAAY;IACZ,4BAA4B;IAC5B;;;;sCAIkC;IAClC,6CAA6C;EAC/C;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,aAAa;IACb,uBAAuB;IACvB,kBAAkB;IAClB,oBAAoB;EACtB;;EAEA;IACE,kBAAkB;IAClB,uBAAuB;EACzB;;EAEA;IACE,oBAAoB;IACpB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB;;;;sCAIkC;IAClC,6CAA6C;IAC7C,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sEAAsE;EACxE;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,WAAW;EACb;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,YAAY;EACd;;EAEA;IACE,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;2BAGuB;EACzB;;EAEA;IACE,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;iCAG6B;EAC/B;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,oBAAoB;IACpB,iCAAiC;IACjC,YAAY;IACZ,YAAY;EACd;;EAEA;IACE,UAAU;IACV,uBAAuB;EACzB;;EAEA;IACE,wBAAwB;IACxB,qBAAqB;IACrB,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,UAAU;IACV,oBAAoB;IACpB,qCAAqC;EACvC;AACF;;AAEA,2DAA2D","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.outer-nav {\n  color: white;\n  background: rebeccapurple;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  /* display: none; */\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n\n/*! Everything below this needs to be kept in the code for npm package */\n\n.outer-nav-for-mobile-menu.clicked {\n  display: none;\n}\n\n/** **`` GIANT MEDIA QUERY ``** */\n/** ***************************************************** */\n\n/*todo **`` Mess with giant media query */\n\n@media (width <= 450px) {\n  .mobile-wrap {\n    padding: 40px 0;\n    position: absolute;\n    width: 100vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  .mobile-menu {\n    width: 40px;\n    height: 40px;\n    border-radius: 0 10px 10px 0;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n  }\n\n  .line1 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 15px;\n    left: 10px;\n  }\n\n  .line2 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 22px;\n    left: 14px;\n  }\n\n  .lower-menu-wrap {\n    display: flex;\n    justify-content: center;\n    align-self: center;\n    pointer-events: none;\n  }\n\n  .lower-menu-wrap.clicked .mobile-exit {\n    translate: 0px 0px;\n    pointer-events: initial;\n  }\n\n  .mobile-exit {\n    translate: 0px 100px;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n    color: white;\n    font-size: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n  }\n\n  .shell-wrap {\n    position: absolute;\n  }\n\n  .shell-wrap.clicked .outer-shell {\n    transform: scale(12);\n    top: -30px;\n    left: -80px;\n  }\n\n  .shell-wrap.clicked .inner-shell {\n    transform: scale(12);\n    top: -30px;\n    left: -140px;\n  }\n\n  .outer-shell {\n    position: absolute;\n    width: 24vw;\n    height: 11vh;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #146ef5;\n    transition:\n      transform 400ms ease-in-out,\n      left 400ms ease-in-out,\n      top 400ms ease-in-out;\n  }\n\n  .inner-shell {\n    position: absolute;\n    width: 24vw;\n    height: 11vh;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #0045ac;\n    transition:\n      transform 400ms ease-in-out 100ms,\n      left 400ms ease-in-out 100ms,\n      top 400ms ease-in-out 100ms;\n  }\n\n  .inner-nav {\n    position: absolute;\n    color: white;\n    padding: 50px;\n    /* z-index: -100; */\n    pointer-events: none;\n    /* background: rgb(57, 42, 42); */\n    width: 100vw;\n    height: 60vh;\n  }\n\n  .inner-nav.clicked .nav-ul {\n    opacity: 1;\n    pointer-events: initial;\n  }\n\n  .nav-ul {\n    /* position: absolute; */\n    list-style-type: none;\n    font-size: 1.5rem;\n    display: flex;\n    flex-direction: column;\n    /* background: blue; */\n    justify-content: space-between;\n    height: 100%;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 450ms ease-in-out;\n  }\n}\n\n/** ***************************************************** */\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,4BAA4B;AAC9B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA,wEAAwE;;AAExE;EACE,aAAa;AACf;;AAEA,iCAAiC;AACjC,2DAA2D;;AAE3D,yCAAyC;;AAEzC;EACE;IACE,eAAe;IACf,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;EAChC;;EAEA;IACE,WAAW;IACX,YAAY;IACZ,4BAA4B;IAC5B;;;;sCAIkC;IAClC,6CAA6C;EAC/C;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,UAAU;EACZ;;EAEA;IACE,aAAa;IACb,uBAAuB;IACvB,kBAAkB;IAClB,oBAAoB;EACtB;;EAEA;IACE,kBAAkB;IAClB,uBAAuB;EACzB;;EAEA;IACE,oBAAoB;IACpB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB;;;;sCAIkC;IAClC,6CAA6C;IAC7C,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sEAAsE;EACxE;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,WAAW;EACb;;EAEA;IACE,oBAAoB;IACpB,UAAU;IACV,YAAY;EACd;;EAEA;IACE,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;2BAGuB;EACzB;;EAEA;IACE,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,mBAAmB;IACnB;;;iCAG6B;EAC/B;;EAEA;IACE,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,oBAAoB;IACpB,YAAY;IACZ,YAAY;EACd;;EAEA;IACE,UAAU;IACV,uBAAuB;EACzB;;EAEA;IACE,qBAAqB;IACrB,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,UAAU;IACV,oBAAoB;IACpB,qCAAqC;EACvC;AACF;;AAEA,2DAA2D","sourcesContent":["body {\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr 10fr;\n}\n\n.outer-nav {\n  color: white;\n  background: rebeccapurple;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.outer-nav ul {\n  list-style-type: none;\n  display: flex;\n  justify-content: space-around;\n}\n\n.outer-nav li {\n  cursor: pointer;\n}\n\nmain {\n  padding: 20px;\n}\n\n/*! Everything below this needs to be kept in the code for npm package */\n\n.outer-nav-for-mobile-menu.clicked {\n  display: none;\n}\n\n/** **`` GIANT MEDIA QUERY ``** */\n/** ***************************************************** */\n\n/*todo **`` Mess with giant media query */\n\n@media (width <= 450px) {\n  .mobile-wrap {\n    padding: 40px 0;\n    position: absolute;\n    width: 100vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  .mobile-menu {\n    width: 40px;\n    height: 40px;\n    border-radius: 0 10px 10px 0;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n  }\n\n  .line1 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 15px;\n    left: 10px;\n  }\n\n  .line2 {\n    width: 12px;\n    height: 1px;\n    background: white;\n    border-radius: 10px;\n    position: relative;\n    top: 22px;\n    left: 14px;\n  }\n\n  .lower-menu-wrap {\n    display: flex;\n    justify-content: center;\n    align-self: center;\n    pointer-events: none;\n  }\n\n  .lower-menu-wrap.clicked .mobile-exit {\n    translate: 0px 0px;\n    pointer-events: initial;\n  }\n\n  .mobile-exit {\n    translate: 0px 100px;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    box-shadow:\n      2px 2px 5px rgba(0, 0, 0, 0.1),\n      5px 5px 10px rgba(0, 0, 0, 0.3),\n      -2px 2px 5px rgba(0, 0, 0, 0.1),\n      -5px 5px 10px rgba(0, 0, 0, 0.3);\n    background: radial-gradient(#146ef5, #0045ac);\n    color: white;\n    font-size: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    transition: translate 400ms cubic-bezier(0.51, 0.11, 0.22, 2.24) 400ms;\n  }\n\n  .shell-wrap {\n    position: absolute;\n  }\n\n  .shell-wrap.clicked .outer-shell {\n    transform: scale(12);\n    top: -30px;\n    left: -80px;\n  }\n\n  .shell-wrap.clicked .inner-shell {\n    transform: scale(12);\n    top: -30px;\n    left: -140px;\n  }\n\n  .outer-shell {\n    position: absolute;\n    width: 24vw;\n    height: 11vh;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #146ef5;\n    transition:\n      transform 400ms ease-in-out,\n      left 400ms ease-in-out,\n      top 400ms ease-in-out;\n  }\n\n  .inner-shell {\n    position: absolute;\n    width: 24vw;\n    height: 11vh;\n    border-radius: 50%;\n    top: -90px;\n    left: -150px;\n    background: #0045ac;\n    transition:\n      transform 400ms ease-in-out 100ms,\n      left 400ms ease-in-out 100ms,\n      top 400ms ease-in-out 100ms;\n  }\n\n  .inner-nav {\n    position: absolute;\n    color: white;\n    padding: 50px;\n    pointer-events: none;\n    width: 100vw;\n    height: 60vh;\n  }\n\n  .inner-nav.clicked .nav-ul {\n    opacity: 1;\n    pointer-events: initial;\n  }\n\n  .nav-ul {\n    list-style-type: none;\n    font-size: 1.5rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    height: 100%;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 450ms ease-in-out;\n  }\n}\n\n/** ***************************************************** */\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1214,20 +1213,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   outerNav: () => (/* binding */ outerNav)
 /* harmony export */ });
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
-// import { innerNav, lowerMenuWrap, mobileMenu, shellWrap } from '..';
 
 
 
 
 //! **`` This needs to match the css media query parameter
 const windowSizeWatcher = window.matchMedia('(width <= 450px)');
-console.log('windowSizeWatcher');
-console.log(windowSizeWatcher.matches);
 
 let outerNav;
-
-// let mobileMenu;
-// let mobileMenu, lowerMenuWrap, shellWrap, innerNav;
 
 //? **`` This watches when the media query kicks in and adds all the elements and functions when the window matches the media size and removes them when the size gets bigger than the media query parameter.
 
@@ -1239,11 +1232,9 @@ function watchWindowSize() {
 
   //? **`` Watches for *changes* in the screen size and either initiates or removes the mobile menu.
   windowSizeWatcher.addEventListener('change', (e) => {
-    // e.matches ? console.log('Thats dope!') : console.log('please kill meeeee');
     if (e.matches) {
       (0,_functions__WEBPACK_IMPORTED_MODULE_0__.initMobileMenu)();
     } else {
-      console.log('please kill meeeee');
       _functions__WEBPACK_IMPORTED_MODULE_0__.mobileWrap.remove();
       (0,_functions__WEBPACK_IMPORTED_MODULE_0__.toggleOuterNav)();
     }
@@ -1270,26 +1261,14 @@ function closeMobileMenu() {
   });
 }
 
-// function initMobileMenu() {
-//   console.log('Thats dope!');
-//   populateMobileMenu();
-//   mobileMenu = document.querySelector('.mobile-menu');
-//   lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-//   shellWrap = document.querySelector('.shell-wrap');
-//   innerNav = document.querySelector('.inner-nav');
-//   openMobileMenu();
-//   closeMobileMenu();
-// }
+//? **`` Checks to see if 'outer-nav-for-mobile-menu' exists. If so, it runs the mobile menu code
 
 function lookForOuterNavClass() {
   if (document.querySelector('.outer-nav-for-mobile-menu')) {
-    console.log('gotcha!');
     outerNav = document.querySelector('.outer-nav-for-mobile-menu');
     watchWindowSize();
   }
 }
-
-// lookForOuterNavClass();
 
 
 /***/ }),
@@ -1319,6 +1298,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const navArray = [];
 const outerNavList = document.querySelectorAll('.outer-nav-for-mobile-menu li');
 let mobileWrap, mobileMenu, lowerMenuWrap, shellWrap, innerNav;
@@ -1331,23 +1311,9 @@ function addListItemsToArray() {
   });
 }
 
-//? **`` This creates all the html needed for the mobile menu and assigns the 'mobileWrap' a value after the element is created
-
-// function populateMobileMenu() {
-//   createMobileWrap();
-//   mobileWrap = document.querySelector('.mobile-wrap');
-
-//   createUpperMenuWrap();
-//   createLowerMenuWrap();
-//   createShellWrap();
-//   createInnerNav();
-// }
-
 //? **`` This initializes all the html and functionality for the mobile menu
-function initMobileMenu() {
-  console.log('Thats dope!');
-  // populateMobileMenu();
 
+function initMobileMenu() {
   (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createMobileWrap)();
   mobileWrap = document.querySelector('.mobile-wrap');
 
@@ -1366,6 +1332,7 @@ function initMobileMenu() {
 }
 
 //? **`` This hides or makes visible the outer nav
+
 function toggleOuterNav() {
   _event_handlers__WEBPACK_IMPORTED_MODULE_1__.outerNav.classList.toggle('clicked');
 }
@@ -1455,11 +1422,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
 /* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
-/* harmony import */ var _modules_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/functions */ "./src/modules/functions.js");
-/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-// export { innerNav, shellWrap, lowerMenuWrap, mobileMenu };
-
+/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 //! **`` This "body" import is needed even though it's saying it's not being read.
 
 
@@ -1468,30 +1432,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 //todo **`` Need to figure out the animations without normalize.css
+
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.lookForOuterNavClass)();
-// watchWindowSize();
-
-// populateMobileMenu();
-
-// const mobileMenu = document.querySelector('.mobile-menu');
-// console.log('mobileMenu');
-// console.log(mobileMenu);
-
-// const lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-
-// const shellWrap = document.querySelector('.shell-wrap');
-
-// const innerNav = document.querySelector('.inner-nav');
-
-// openMobileMenu();
-// closeMobileMenu();
-
-//todo **`` Need to dynamically create the rest of the elements based on if the class "mobile-wrap" is present
-
-//todo **`` Remove the outer nav when the mobile menu pops up.
 
 })();
 
