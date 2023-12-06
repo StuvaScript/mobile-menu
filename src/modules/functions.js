@@ -1,7 +1,6 @@
 export {
   navArray,
   addListItemsToArray,
-  // populateMobileMenu,
   mobileWrap,
   initMobileMenu,
   mobileMenu,
@@ -18,6 +17,7 @@ import {
   createShellWrap,
   createUpperMenuWrap,
 } from './dom-manipulation';
+
 import { closeMobileMenu, openMobileMenu, outerNav } from './event-handlers';
 
 const navArray = [];
@@ -32,23 +32,9 @@ function addListItemsToArray() {
   });
 }
 
-//? **`` This creates all the html needed for the mobile menu and assigns the 'mobileWrap' a value after the element is created
-
-// function populateMobileMenu() {
-//   createMobileWrap();
-//   mobileWrap = document.querySelector('.mobile-wrap');
-
-//   createUpperMenuWrap();
-//   createLowerMenuWrap();
-//   createShellWrap();
-//   createInnerNav();
-// }
-
 //? **`` This initializes all the html and functionality for the mobile menu
-function initMobileMenu() {
-  console.log('Thats dope!');
-  // populateMobileMenu();
 
+function initMobileMenu() {
   createMobileWrap();
   mobileWrap = document.querySelector('.mobile-wrap');
 
@@ -67,6 +53,7 @@ function initMobileMenu() {
 }
 
 //? **`` This hides or makes visible the outer nav
+
 function toggleOuterNav() {
   outerNav.classList.toggle('clicked');
 }

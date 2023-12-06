@@ -10,7 +10,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* display: none; */
 }
 
 .outer-nav ul {
@@ -21,6 +20,10 @@ body {
 
 .outer-nav li {
   cursor: pointer;
+}
+
+main {
+  padding: 20px;
 }
 
 /*! Everything below this needs to be kept in the code for npm package */
@@ -156,9 +159,7 @@ body {
     position: absolute;
     color: white;
     padding: 50px;
-    /* z-index: -100; */
     pointer-events: none;
-    /* background: rgb(57, 42, 42); */
     width: 100vw;
     height: 60vh;
   }
@@ -169,12 +170,10 @@ body {
   }
 
   .nav-ul {
-    /* position: absolute; */
     list-style-type: none;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    /* background: blue; */
     justify-content: space-between;
     height: 100%;
     opacity: 0;

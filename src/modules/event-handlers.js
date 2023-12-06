@@ -1,32 +1,19 @@
-// import { innerNav, lowerMenuWrap, mobileMenu, shellWrap } from '..';
+export { openMobileMenu, closeMobileMenu, outerNav, lookForOuterNavClass };
+
 import {
   initMobileMenu,
   innerNav,
   lowerMenuWrap,
   mobileMenu,
   mobileWrap,
-  populateMobileMenu,
   shellWrap,
   toggleOuterNav,
 } from './functions';
 
-export {
-  // watchWindowSize,
-  openMobileMenu,
-  closeMobileMenu,
-  outerNav,
-  lookForOuterNavClass,
-};
-
 //! **`` This needs to match the css media query parameter
 const windowSizeWatcher = window.matchMedia('(width <= 450px)');
-console.log('windowSizeWatcher');
-console.log(windowSizeWatcher.matches);
 
 let outerNav;
-
-// let mobileMenu;
-// let mobileMenu, lowerMenuWrap, shellWrap, innerNav;
 
 //? **`` This watches when the media query kicks in and adds all the elements and functions when the window matches the media size and removes them when the size gets bigger than the media query parameter.
 
@@ -38,11 +25,9 @@ function watchWindowSize() {
 
   //? **`` Watches for *changes* in the screen size and either initiates or removes the mobile menu.
   windowSizeWatcher.addEventListener('change', (e) => {
-    // e.matches ? console.log('Thats dope!') : console.log('please kill meeeee');
     if (e.matches) {
       initMobileMenu();
     } else {
-      console.log('please kill meeeee');
       mobileWrap.remove();
       toggleOuterNav();
     }
@@ -69,23 +54,11 @@ function closeMobileMenu() {
   });
 }
 
-// function initMobileMenu() {
-//   console.log('Thats dope!');
-//   populateMobileMenu();
-//   mobileMenu = document.querySelector('.mobile-menu');
-//   lowerMenuWrap = document.querySelector('.lower-menu-wrap');
-//   shellWrap = document.querySelector('.shell-wrap');
-//   innerNav = document.querySelector('.inner-nav');
-//   openMobileMenu();
-//   closeMobileMenu();
-// }
+//? **`` Checks to see if 'outer-nav-for-mobile-menu' exists. If so, it runs the mobile menu code
 
 function lookForOuterNavClass() {
   if (document.querySelector('.outer-nav-for-mobile-menu')) {
-    console.log('gotcha!');
     outerNav = document.querySelector('.outer-nav-for-mobile-menu');
     watchWindowSize();
   }
 }
-
-// lookForOuterNavClass();
