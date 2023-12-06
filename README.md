@@ -17,6 +17,7 @@ Follow the link above to the live project. If you're not using a mobile device, 
 
 ### With assistance from:
 
+- node.js
 - Webpack
 - Prettier
 - ES Lint
