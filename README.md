@@ -6,6 +6,10 @@ A nice mobile menu for your dynamic website!
 
 Check out the [live project here](https://stuvascript.github.io/mobile-menu/)
 
+## Getting Started
+
+Follow the link above to the live project. If you're not using a mobile device, open the dev tools with F12 on Windows or Cmd + Opt + I on macOS and change the window size to see the mobile menu in action!
+
 ## Built With
 
 - vanilla JavaScript
