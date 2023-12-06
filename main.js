@@ -1228,7 +1228,6 @@ function watchWindowSize() {
   //? **`` Checks to see if the screen size is *initially* the specified size to kick in the mobile menu.
   if (windowSizeWatcher.matches) {
     (0,_functions__WEBPACK_IMPORTED_MODULE_0__.initMobileMenu)();
-    return;
   }
 
   //? **`` Watches for *changes* in the screen size and either initiates or removes the mobile menu.
