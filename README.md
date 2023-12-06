@@ -7,7 +7,7 @@ A nice mobile menu for your dynamic website!
 - vanilla JavaScript
 - CSS
 
-# With assistance from
+### With assistance from
 
 - Webpack
 - Prettier
