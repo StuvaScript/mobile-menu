@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* display: none; */
 }
 
 .outer-nav ul {
@@ -22,7 +23,10 @@ body {
   cursor: pointer;
 }
 
-.inner-nav {
+/*! Everything below this needs to be kept in the code for npm package */
+
+.outer-nav-for-mobile-menu.clicked {
+  display: none;
 }
 
 /** **`` GIANT MEDIA QUERY ``** */

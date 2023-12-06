@@ -1,14 +1,51 @@
-import { innerNav, lowerMenuWrap, mobileMenu, shellWrap } from '..';
+// import { innerNav, lowerMenuWrap, mobileMenu, shellWrap } from '..';
+import {
+  initMobileMenu,
+  innerNav,
+  lowerMenuWrap,
+  mobileMenu,
+  mobileWrap,
+  populateMobileMenu,
+  shellWrap,
+  toggleOuterNav,
+} from './functions';
 
-export { watchWindowSize, openMobileMenu, closeMobileMenu };
+export {
+  // watchWindowSize,
+  openMobileMenu,
+  closeMobileMenu,
+  outerNav,
+  lookForOuterNavClass,
+};
 
-const windowSizeWatcher = window.matchMedia('(width <= 400px)');
+//! **`` This needs to match the css media query parameter
+const windowSizeWatcher = window.matchMedia('(width <= 450px)');
+console.log('windowSizeWatcher');
+console.log(windowSizeWatcher.matches);
 
-//? **`` This watches when the media query kicks in.
+let outerNav;
+
+// let mobileMenu;
+// let mobileMenu, lowerMenuWrap, shellWrap, innerNav;
+
+//? **`` This watches when the media query kicks in and adds all the elements and functions when the window matches the media size and removes them when the size gets bigger than the media query parameter.
 
 function watchWindowSize() {
+  //? **`` Checks to see if the screen size is *initially* the specified size to kick in the mobile menu.
+  if (windowSizeWatcher.matches) {
+    initMobileMenu();
+  }
+
+  //? **`` Watches for *changes* in the screen size and either initiates or removes the mobile menu.
   windowSizeWatcher.addEventListener('change', (e) => {
-    e.matches ? console.log('Thats dope!') : console.log('please kill meeeee');
+    // e.matches ? console.log('Thats dope!') : console.log('please kill meeeee');
+    if (e.matches) {
+      initMobileMenu();
+    } else {
+      console.log('please kill meeeee');
+      mobileWrap.remove();
+      toggleOuterNav();
+    }
   });
 }
 
@@ -31,3 +68,24 @@ function closeMobileMenu() {
     innerNav.classList.toggle('clicked');
   });
 }
+
+// function initMobileMenu() {
+//   console.log('Thats dope!');
+//   populateMobileMenu();
+//   mobileMenu = document.querySelector('.mobile-menu');
+//   lowerMenuWrap = document.querySelector('.lower-menu-wrap');
+//   shellWrap = document.querySelector('.shell-wrap');
+//   innerNav = document.querySelector('.inner-nav');
+//   openMobileMenu();
+//   closeMobileMenu();
+// }
+
+function lookForOuterNavClass() {
+  if (document.querySelector('.outer-nav-for-mobile-menu')) {
+    console.log('gotcha!');
+    outerNav = document.querySelector('.outer-nav-for-mobile-menu');
+    watchWindowSize();
+  }
+}
+
+// lookForOuterNavClass();
