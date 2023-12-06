@@ -1433,6 +1433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //todo **`` Need to figure out the animations without normalize.css
+//todo **`` Write a better README
 
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.lookForOuterNavClass)();
 
