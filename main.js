@@ -1212,7 +1212,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   openMobileMenu: () => (/* binding */ openMobileMenu),
 /* harmony export */   outerNav: () => (/* binding */ outerNav)
 /* harmony export */ });
-/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
+/* harmony import */ var _dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-manipulation */ "./src/modules/dom-manipulation.js");
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions */ "./src/modules/functions.js");
+
+
 
 
 
@@ -1227,16 +1230,16 @@ let outerNav;
 function watchWindowSize() {
   //? **`` Checks to see if the screen size is *initially* the specified size to kick in the mobile menu.
   if (windowSizeWatcher.matches) {
-    (0,_functions__WEBPACK_IMPORTED_MODULE_0__.initMobileMenu)();
+    (0,_functions__WEBPACK_IMPORTED_MODULE_1__.initMobileMenu)();
   }
 
   //? **`` Watches for *changes* in the screen size and either initiates or removes the mobile menu.
   windowSizeWatcher.addEventListener('change', (e) => {
     if (e.matches) {
-      (0,_functions__WEBPACK_IMPORTED_MODULE_0__.initMobileMenu)();
+      (0,_functions__WEBPACK_IMPORTED_MODULE_1__.initMobileMenu)();
     } else {
-      _functions__WEBPACK_IMPORTED_MODULE_0__.mobileWrap.remove();
-      (0,_functions__WEBPACK_IMPORTED_MODULE_0__.toggleOuterNav)();
+      _functions__WEBPACK_IMPORTED_MODULE_1__.mobileWrap.remove();
+      (0,_functions__WEBPACK_IMPORTED_MODULE_1__.toggleOuterNav)();
     }
   });
 }
@@ -1244,20 +1247,20 @@ function watchWindowSize() {
 //? **`` When clicking the mobile hamburger menu, it opens the mobile menu and toggles a class name to allow for animations elsewhere. Look at the css for more details.
 
 function openMobileMenu() {
-  _functions__WEBPACK_IMPORTED_MODULE_0__.mobileMenu.addEventListener('click', function () {
-    _functions__WEBPACK_IMPORTED_MODULE_0__.shellWrap.classList.toggle('clicked');
-    _functions__WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.classList.toggle('clicked');
-    _functions__WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
+  _functions__WEBPACK_IMPORTED_MODULE_1__.mobileMenu.addEventListener('click', function () {
+    _functions__WEBPACK_IMPORTED_MODULE_1__.shellWrap.classList.toggle('clicked');
+    _functions__WEBPACK_IMPORTED_MODULE_1__.lowerMenuWrap.classList.toggle('clicked');
+    _functions__WEBPACK_IMPORTED_MODULE_1__.innerNav.classList.toggle('clicked');
   });
 }
 
 //? **`` When clicking the exit button, it removes class names and closes the mobile menu
 
 function closeMobileMenu() {
-  _functions__WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.addEventListener('click', function () {
-    _functions__WEBPACK_IMPORTED_MODULE_0__.lowerMenuWrap.classList.toggle('clicked');
-    _functions__WEBPACK_IMPORTED_MODULE_0__.shellWrap.classList.toggle('clicked');
-    _functions__WEBPACK_IMPORTED_MODULE_0__.innerNav.classList.toggle('clicked');
+  _functions__WEBPACK_IMPORTED_MODULE_1__.lowerMenuWrap.addEventListener('click', function () {
+    _functions__WEBPACK_IMPORTED_MODULE_1__.lowerMenuWrap.classList.toggle('clicked');
+    _functions__WEBPACK_IMPORTED_MODULE_1__.shellWrap.classList.toggle('clicked');
+    _functions__WEBPACK_IMPORTED_MODULE_1__.innerNav.classList.toggle('clicked');
   });
 }
 
@@ -1420,13 +1423,9 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
-/* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
-/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-//! **`` This "body" import is needed even though it's saying it's not being read.
-
-
+/* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
+/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 
 
 
@@ -1434,7 +1433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //todo **`` Need to figure out the animations without normalize.css
 
-(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.lookForOuterNavClass)();
+(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_0__.lookForOuterNavClass)();
 
 })();
 
