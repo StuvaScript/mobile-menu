@@ -1,5 +1,7 @@
 export { openMobileMenu, closeMobileMenu, outerNav, lookForOuterNavClass };
 
+import { body } from './dom-manipulation';
+
 import {
   initMobileMenu,
   innerNav,
