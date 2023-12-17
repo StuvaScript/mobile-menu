@@ -4,9 +4,13 @@ A nifty mobile menu for all your mobile projects!
 
 ## Getting Started
 
-### Where To Find It
+### Where To Download
 
 Visit [my npm page](https://www.npmjs.com/package/@stuvascript/mobile-menu) to download this package.
+
+### View The Project
+
+Visit [the live project](https://stuvascript.github.io/mobile-menu/). If you're not using a mobile device, open the dev tools with F12 on Windows or Cmd + Opt + I on macOS and change the window size to see the mobile menu in action!
 
 ### Prerequisites
 
@@ -87,9 +91,16 @@ This "media query" and "position: absolute" are needed so that the parent elemen
 
 Vanilla JavaScript and CSS
 
+### With assistance from:
+
+- node.js
+- Webpack
+- Prettier
+- ES Lint
+
 ## Author
 
-- **Stuvascript** - [Github page](https://github.com/StuvaScript)
+- **Stuvascript** - [Portfolio](https://stuvascript.github.io/portfolio/)
 
 ## License
 
